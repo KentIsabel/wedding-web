@@ -1509,6 +1509,8 @@
 
       .ceremony-bg-text {
         font-size: 4rem;
+        top: 40%; /* 手機版背景文字往上移動 */
+        transform: translateX(-50%) translateY(-400px); /* 手機版背景文字往上移動到-400px */
       }
 
       .ceremony-image img {
@@ -1787,9 +1789,13 @@
                         // 计算从section开始位置滚动的距离
                         const scrollFromSection = currentScroll - (sectionTop - window.innerHeight);
                         
-                        // 限制移动范围：从0到200px
-                        const maxMove = 250;
+                        // 手机版移动更多，桌面版移动较少
+                        const isMobile = window.innerWidth <= 768;
+                        const maxMove = isMobile ? 400 : 250; // 手机版400px，桌面版250px
                         const moveDistance = Math.min(scrollFromSection * 0.5, maxMove); // 每滚动1px，文字移动0.5px
+                        
+                        // 调试信息
+                        console.log('Mobile:', isMobile, 'MaxMove:', maxMove, 'MoveDistance:', moveDistance);
                         
                         bgText.style.transform = `translateX(-50%) translateY(calc(-50% - ${moveDistance}px))`;
                     } else {

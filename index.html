@@ -1281,7 +1281,7 @@
             <p>INVITE YOU TO THE CEREMONY AND CELEBRATION OF THEIR MARRIAGE</p>
             <p>MARCH 22, 2026 SUNDAY<br>AT 3:30 IN THE AFTERNOON</p>
             <p>HONG KONG ADVENTIST COLLEGE<br>SAI KUNG, NEW TERRITORIES</p>
-            <p>Reception to follow</p>
+            <!-- <p>Reception to follow</p> -->
           </div>
         </div>
         <div class="arch-floral-bg"></div>
@@ -1787,8 +1787,9 @@
                         // 计算从section开始位置滚动的距离
                         const scrollFromSection = currentScroll - (sectionTop - window.innerHeight);
                         
-                        // 限制移动范围：从0到200px
-                        const maxMove = 250;
+                        // 手机版移动更多，桌面版移动较少
+                        const isMobile = window.innerWidth <= 768;
+                        const maxMove = isMobile ? 400 : 250; // 手机版400px，桌面版250px
                         const moveDistance = Math.min(scrollFromSection * 0.5, maxMove); // 每滚动1px，文字移动0.5px
                         
                         bgText.style.transform = `translateX(-50%) translateY(calc(-50% - ${moveDistance}px))`;
