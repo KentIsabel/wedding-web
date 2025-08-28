@@ -1066,7 +1066,7 @@
         </div>
     </section>
  <section class="ceremony-detail-section-copy">
-        <!-- <div class="ceremony-bg-text-copy">PICK-UP</div> -->
+        <div class="ceremony-bg-text-copy">CEREMONY</div>
         <div class="ceremony-container-copy">
             
             <div class="ceremony-details-copy">
@@ -1539,9 +1539,9 @@
 
     .ceremony-bg-text-copy {
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translateX(-50%) translateY(-50%);
+      top: 10%;
+      /* left: 50%; */
+      transform: translateX(200px) translateY(-50%); /* 初始位置在右边，但需要减去文字宽度的一半来真正居中 */
       font-size: 8rem;
       font-weight: 300;
       color: rgba(139, 115, 85, 0.1);
@@ -1549,8 +1549,11 @@
       letter-spacing: 2px;
       z-index: 1;
       pointer-events: none;
-      transition: transform 0.3s ease-out;
+      transition: none; /* 移除transition，让动画更流畅 */
       white-space: nowrap;
+      text-align: center; /* 确保文字居中 */
+      width: 100%;
+
     }
 
     .ceremony-container-copy {
@@ -1799,10 +1802,44 @@
                     }
                 }
             }
+
+            // 第二个背景文字动画效果 - 从右边滑入到中间
+            function animateBackgroundTextCopy() {
+                const bgTextCopy = document.querySelector('.ceremony-bg-text-copy');
+                if (bgTextCopy) {
+                    const section = document.querySelector('.ceremony-detail-section-copy');
+                    const sectionTop = section.offsetTop;
+                    const currentScroll = window.pageYOffset;
+                    
+                    // 当滚动到section位置时开始移动文字
+                    if (currentScroll >= sectionTop - window.innerHeight) {
+                        // 计算从section开始位置滚动的距离
+                        const scrollFromSection = currentScroll - (sectionTop - window.innerHeight);
+                        
+                        // 手机版移动更多，桌面版移动较少
+                        const isMobile = window.innerWidth <= 768;
+                        const maxMove = isMobile ? 400 : 250; // 手机版400px，桌面版250px
+                        const moveDistance = Math.min(scrollFromSection * 0.5, maxMove); // 每滚动1px，文字移动0.5px
+                        
+                        // 从右边滑入到中间的效果 - 只有滚动到section位置时才开始
+                        const slideInDistance = Math.min(scrollFromSection * 0.3, 200); // 每滚动1px，文字滑入0.3px，最大200px
+                        const translateX = 200 - slideInDistance; // 从200px（右边）开始，逐渐滑入到0px（中间）
+                        
+                        // 调试信息
+                        console.log('slideInDistance:', slideInDistance, 'translateX:', translateX);
+                        
+                        bgTextCopy.style.transform = `translateX(${translateX}px) translateY(-50%)`;
+                    } else {
+                        // 还没到section位置时，文字保持在右边，不执行动画
+                        bgTextCopy.style.transform = `translateX(-200px) translateY(-50%)`;
+                    }
+                }
+            }
             
             // 滚动时执行动画
             $(window).scroll(function() {
                 animateBackgroundText();
+                animateBackgroundTextCopy();
             });
             
             // 语言切换功能
