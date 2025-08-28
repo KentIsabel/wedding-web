@@ -1,0 +1,498 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    
+  
+  
+    <title>Wedding Animation Falling Snow Sakura</title>
+  
+    
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dancing+Script&amp;display=swap">
+    
+  <style>
+  @-webkit-keyframes fall {
+      0% {
+          opacity: 0.9;
+          top: 0
+      }
+      100% {
+          opacity: 0.2;
+          top: 100%
+      }
+  }
+  
+  @keyframes fall {
+      0% {
+          opacity: 0.9;
+          top: 0
+      }
+      100% {
+          opacity: 0.2;
+          top: 100%
+      }
+  }
+  
+  @-webkit-keyframes blow-soft-left {
+      0% {
+          margin-left: 0
+      }
+      100% {
+          margin-left: -50%
+      }
+  }
+  
+  @keyframes blow-soft-left {
+      0% {
+          margin-left: 0
+      }
+      100% {
+          margin-left: -50%
+      }
+  }
+  
+  @-webkit-keyframes blow-medium-left {
+      0% {
+          margin-left: 0
+      }
+      100% {
+          margin-left: -100%
+      }
+  }
+  
+  @keyframes blow-medium-left {
+      0% {
+          margin-left: 0
+      }
+      100% {
+          margin-left: -100%
+      }
+  }
+  
+  @-webkit-keyframes blow-soft-right {
+      0% {
+          margin-left: 0
+      }
+      100% {
+          margin-left: 50%
+      }
+  }
+  
+  @keyframes blow-soft-right {
+      0% {
+          margin-left: 0
+      }
+      100% {
+          margin-left: 50%
+      }
+  }
+  
+  @-webkit-keyframes blow-medium-right {
+      0% {
+          margin-left: 0
+      }
+      100% {
+          margin-left: 100%
+      }
+  }
+  
+  @keyframes blow-medium-right {
+      0% {
+          margin-left: 0
+      }
+      100% {
+          margin-left: 100%
+      }
+  }
+  
+  @-webkit-keyframes sway-0 {
+      0% {
+          -webkit-transform: rotate(-5deg)
+      }
+      40% {
+          -webkit-transform: rotate(28deg)
+      }
+      100% {
+          -webkit-transform: rotate(3deg)
+      }
+  }
+  
+  @keyframes sway-0 {
+      0% {
+          -ms-transform: rotate(-5deg);
+          transform: rotate(-5deg)
+      }
+      40% {
+          -ms-transform: rotate(28deg);
+          transform: rotate(28deg)
+      }
+      100% {
+          -ms-transform: rotate(3deg);
+          transform: rotate(3deg)
+      }
+  }
+  
+  @-webkit-keyframes sway-1 {
+      0% {
+          -webkit-transform: rotate(10deg)
+      }
+      40% {
+          -webkit-transform: rotate(43deg)
+      }
+      100% {
+          -webkit-transform: rotate(15deg)
+      }
+  }
+  
+  @keyframes sway-1 {
+      0% {
+          -ms-transform: rotate(10deg);
+          transform: rotate(10deg)
+      }
+      40% {
+          -ms-transform: rotate(43deg);
+          transform: rotate(43deg)
+      }
+      100% {
+          -ms-transform: rotate(15deg);
+          transform: rotate(15deg)
+      }
+  }
+  
+  @-webkit-keyframes sway-2 {
+      0% {
+          -webkit-transform: rotate(15deg)
+      }
+      40% {
+          -webkit-transform: rotate(56deg)
+      }
+      100% {
+          -webkit-transform: rotate(22deg)
+      }
+  }
+  
+  @keyframes sway-2 {
+      0% {
+          -ms-transform: rotate(15deg);
+          transform: rotate(15deg)
+      }
+      40% {
+          -ms-transform: rotate(56deg);
+          transform: rotate(56deg)
+      }
+      100% {
+          -ms-transform: rotate(22deg);
+          transform: rotate(22deg)
+      }
+  }
+  
+  @-webkit-keyframes sway-3 {
+      0% {
+          -webkit-transform: rotate(25deg)
+      }
+      40% {
+          -webkit-transform: rotate(74deg)
+      }
+      100% {
+          -webkit-transform: rotate(37deg)
+      }
+  }
+  
+  @keyframes sway-3 {
+      0% {
+          -ms-transform: rotate(25deg);
+          transform: rotate(25deg)
+      }
+      40% {
+          -ms-transform: rotate(74deg);
+          transform: rotate(74deg)
+      }
+      100% {
+          -ms-transform: rotate(37deg);
+          transform: rotate(37deg)
+      }
+  }
+  
+  @-webkit-keyframes sway-4 {
+      0% {
+          -webkit-transform: rotate(40deg)
+      }
+      40% {
+          -webkit-transform: rotate(68deg)
+      }
+      100% {
+          -webkit-transform: rotate(25deg)
+      }
+  }
+  
+  @keyframes sway-4 {
+      0% {
+          -ms-transform: rotate(40deg);
+          transform: rotate(40deg)
+      }
+      40% {
+          -ms-transform: rotate(68deg);
+          transform: rotate(68deg)
+      }
+      100% {
+          -ms-transform: rotate(25deg);
+          transform: rotate(25deg)
+      }
+  }
+  
+  @-webkit-keyframes sway-5 {
+      0% {
+          -webkit-transform: rotate(50deg)
+      }
+      40% {
+          -webkit-transform: rotate(78deg)
+      }
+      100% {
+          -webkit-transform: rotate(40deg)
+      }
+  }
+  
+  @keyframes sway-5 {
+      0% {
+          -ms-transform: rotate(50deg);
+          transform: rotate(50deg)
+      }
+      40% {
+          -ms-transform: rotate(78deg);
+          transform: rotate(78deg)
+      }
+      100% {
+          -ms-transform: rotate(40deg);
+          transform: rotate(40deg)
+      }
+  }
+  
+  @-webkit-keyframes sway-6 {
+      0% {
+          -webkit-transform: rotate(65deg)
+      }
+      40% {
+          -webkit-transform: rotate(92deg)
+      }
+      100% {
+          -webkit-transform: rotate(58deg)
+      }
+  }
+  
+  @keyframes sway-6 {
+      0% {
+          -ms-transform: rotate(65deg);
+          transform: rotate(65deg)
+      }
+      40% {
+          -ms-transform: rotate(92deg);
+          transform: rotate(92deg)
+      }
+      100% {
+          -ms-transform: rotate(58deg);
+          transform: rotate(58deg)
+      }
+  }
+  
+  @-webkit-keyframes sway-7 {
+      0% {
+          -webkit-transform: rotate(72deg)
+      }
+      40% {
+          -webkit-transform: rotate(118deg)
+      }
+      100% {
+          -webkit-transform: rotate(68deg)
+      }
+  }
+  
+  @keyframes sway-7 {
+      0% {
+          -ms-transform: rotate(72deg);
+          transform: rotate(72deg)
+      }
+      40% {
+          -ms-transform: rotate(118deg);
+          transform: rotate(118deg)
+      }
+      100% {
+          -ms-transform: rotate(68deg);
+          transform: rotate(68deg)
+      }
+  }
+  
+  @-webkit-keyframes sway-8 {
+      0% {
+          -webkit-transform: rotate(94deg)
+      }
+      40% {
+          -webkit-transform: rotate(136deg)
+      }
+      100% {
+          -webkit-transform: rotate(82deg)
+      }
+  }
+  
+  @keyframes sway-8 {
+      0% {
+          -ms-transform: rotate(94deg);
+          transform: rotate(94deg)
+      }
+      40% {
+          -ms-transform: rotate(136deg);
+          transform: rotate(136deg)
+      }
+      100% {
+          -ms-transform: rotate(82deg);
+          transform: rotate(82deg)
+      }
+  }
+  
+  .sakura {
+     /* background: -webkit-linear-gradient(120deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.9));
+      background: linear-gradient(120deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.9));*/
+      background: red;
+      pointer-events: none;
+      position: absolute
+  }
+  
+  .sakura {
+    background:#674ea7;
+  }
+  
+  /*******************************/
+  
+  body {
+    font-family: Arial, Helvetica, Sans-serif;
+  }
+  img { 
+      max-width: 100%;
+      height: auto;
+  }
+  
+  @media (max-width:900px) {
+  img {   max-width: 30%; }
+  }
+  
+  .top-right-decoration {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: block;
+  }
+  
+  .top-left-decoration {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+  }
+  
+  .title h1 {
+     font-family: 'Dancing Script', cursive;
+      font-weight: normal;
+      font-style: normal;
+     font-size:60px;
+    margin:5px 0;
+     
+     color:#674ea7;
+  }
+  
+  .title h2 {
+     font-family: 'Dancing Script', cursive;
+      font-weight: normal;
+      font-style: normal;
+    margin:0;
+    padding:0;
+    font-size:20px;
+    color:#e25c67;
+    line-height:1;
+  }
+  
+  .dance-med {
+       font-family: 'Dancing Script', cursive;
+      font-weight: normal;
+      font-style: normal;
+     font-size:20px;
+      color:#674ea7;
+  }
+  
+  .title h3 {
+    font-weight:300;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size:16px;
+     color:#674ea7;
+        margin-top: 5px;
+  }
+  
+  
+  .title p {
+     color:#564861;
+    margin: 30px 0 20px;
+     text-transform: uppercase;
+    letter-spacing: 3px;
+      font-size:12px;
+  }
+  
+  .wrap {
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-align-items: center;
+      align-items: center;
+      padding: 20px;
+      text-align: center; 
+    min-height:100%;
+  }
+  </style>
+  
+    <script>
+    window.console = window.console || function(t) {};
+  </script>
+  
+    
+    
+  </head>
+  
+  <body translate="no">
+    <div class="sakura-falling" style="overflow-x: hidden;"><div class="sakura" style="animation: 6.743s linear 0s 1 normal none running fall, 20s linear 0s infinite normal none running blow-soft-left, 3s linear 0s infinite normal none running sway-5; border-radius: 14px 1px; height: 11px; left: 1073.05px; margin-top: -33px; width: 10px;"></div><div class="sakura" style="animation: 5.743s linear 0s 1 normal none running fall, 26s linear 0s infinite normal none running blow-soft-right, 2s linear 0s infinite normal none running sway-4; border-radius: 14px 2px; height: 10px; left: 775.659px; margin-top: -20px; width: 9px;"></div><div class="sakura" style="animation: 6.743s linear 0s 1 normal none running fall, 12s linear 0s infinite normal none running blow-medium-right, 3s linear 0s infinite normal none running sway-7; border-radius: 20px 1px; height: 10px; left: 157.333px; margin-top: -26px; width: 10px;"></div><div class="sakura" style="animation: 3.743s linear 0s 1 normal none running fall, 18s linear 0s infinite normal none running blow-soft-right, 2s linear 0s infinite normal none running sway-5; border-radius: 15px 3px; height: 13px; left: 260.098px; margin-top: -31px; width: 13px;"></div><div class="sakura" style="animation: 4.743s linear 0s 1 normal none running fall, 13s linear 0s infinite normal none running blow-soft-right, 3s linear 0s infinite normal none running sway-0; border-radius: 19px 2px; height: 11px; left: 789.845px; margin-top: -22px; width: 11px;"></div><div class="sakura" style="animation: 3.743s linear 0s 1 normal none running fall, 27s linear 0s infinite normal none running blow-soft-left, 2s linear 0s infinite normal none running sway-8; border-radius: 14px 1px; height: 13px; left: 672.102px; margin-top: -19px; width: 13px;"></div><div class="sakura" style="animation: 6.743s linear 0s 1 normal none running fall, 25s linear 0s infinite normal none running blow-medium-right, 3s linear 0s infinite normal none running sway-4; border-radius: 16px 2px; height: 13px; left: 489.691px; margin-top: -18px; width: 11px;"></div><div class="sakura" style="animation: 5.743s linear 0s 1 normal none running fall, 16s linear 0s infinite normal none running blow-medium-left, 2s linear 0s infinite normal none running sway-6; border-radius: 14px 3px; height: 13px; left: 119.63px; margin-top: -33px; width: 12px;"></div><div class="sakura" style="animation: 6.743s linear 0s 1 normal none running fall, 17s linear 0s infinite normal none running blow-medium-left, 2s linear 0s infinite normal none running sway-4; border-radius: 16px 1px; height: 11px; left: 1058.61px; margin-top: -20px; width: 8px;"></div><div class="sakura" style="animation: 2.743s linear 0s 1 normal none running fall, 20s linear 0s infinite normal none running blow-medium-right, 2s linear 0s infinite normal none running sway-2; border-radius: 16px 3px; height: 14px; left: 650.314px; margin-top: -31px; width: 13px;"></div><div class="sakura" style="animation: 1.743s linear 0s 1 normal none running fall, 17s linear 0s infinite normal none running blow-soft-left, 4s linear 0s infinite normal none running sway-1; border-radius: 18px 1px; height: 11px; left: 935.361px; margin-top: -34px; width: 9px;"></div><div class="sakura" style="animation: 4.743s linear 0s 1 normal none running fall, 11s linear 0s infinite normal none running blow-medium-left, 3s linear 0s infinite normal none running sway-6; border-radius: 14px 1px; height: 11px; left: 616.243px; margin-top: -27px; width: 10px;"></div><div class="sakura" style="animation: 6.743s linear 0s 1 normal none running fall, 12s linear 0s infinite normal none running blow-soft-right, 4s linear 0s infinite normal none running sway-5; border-radius: 14px 2px; height: 11px; left: -93.627px; margin-top: -21px; width: 11px;"></div></div> 
+  <img src="//i.imgur.com/dGOOfnA.png" alt="image-top-right" class="top-right-decoration">
+  <img src="//i.imgur.com/t6ffnbn.png" alt="image-top-left" class="top-left-decoration"> 
+  
+  <div class="wrap">
+    
+  
+  <div class="title">
+                      <h1>Surjith </h1>
+    <h2>&amp;</h2> 
+    <h1> Jinisha</h1>
+    
+                      <h3>Are getting married</h3>
+                      <p>
+                          on 15 December 2019, At Parakkattu Temple, kavassery                  </p>
+                  </div>
+    
+    </div>
+  
+  
+  <p class="dance-med">
+    we can’t wait to celebrate our special day with you.
+  </p>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/timoschaefer/jQuery-Sakura/jquery-sakura.min.js"></script>
+        <script id="rendered-js">
+  (function ($) {
+    "use strict";
+    $('.sakura-falling').sakura();
+  })(jQuery);
+  //# sourceURL=pen.js
+      </script>
+  
+    
+  
+  
+  
+  </body></html>

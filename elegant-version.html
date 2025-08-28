@@ -1,0 +1,1835 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isabel & Kent - Elegant Wedding Invitation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Playfair+Display:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- 添加jQuery库 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        /* Custom Font */
+       
+
+        /* More elegant style overrides */
+        body {
+            background-color: #faf9f6;
+        }
+        
+        .hero {
+            background: #ffffff;
+        }
+        
+        .hero::before {
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="0.5" fill="%23e8e4de" opacity="0.2"/><circle cx="75" cy="75" r="0.5" fill="%23e8e4de" opacity="0.2"/><circle cx="50" cy="10" r="0.3" fill="%23e8e4de" opacity="0.2"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+        }
+        
+        .couple-names h1 {
+            font-size: 3rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+        
+        .and {
+            font-size: 3.5rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+        
+        .wedding-date {
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+        }
+        
+        .hero-message {
+            font-size: 0.95rem;
+            line-height: 1.9;
+        }
+        
+
+        
+        .image-overlay {
+            background: linear-gradient(transparent, rgba(44, 44, 44, 0.7));
+            padding: 1.2rem;
+        }
+        
+        .image-overlay h3 {
+            font-size: 1.3rem;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+        
+        .image-overlay p {
+            font-size: 0.85rem;
+            font-weight: 300;
+        }
+        
+        .countdown-section {
+            background: #faf9f6;
+            background-image: url('images/school_line.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+        
+        .countdown-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #faf9f6;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity:0.8;
+            z-index: 1;
+        }
+        
+        .countdown-section .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .countdown-item {
+            /* background: linear-gradient(135deg, #e8e4de 0%, #d4c8b8 100%); */
+            /* border: 1px solid #e8d4c0; */
+            /* box-shadow: 0 4px 15px rgba(0,0,0,0.05); */
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        
+        .countdown-item.fade-in-up {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .countdown-number {
+            color: #2c2c2c;
+        }
+        
+        .countdown-label {
+            color: #6b6b6b;
+        }
+        
+        .blessing {
+            font-size: 0.9rem;
+            letter-spacing: 0.3px;
+        }
+        
+        .parent-group {
+            background: #f8f6f2;
+            border: 1px solid #e8d4c0;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.03);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        
+        .parent-group.fade-in-up {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .ceremony-section {
+            background: #f8f6f2;
+        }
+        
+        .ceremony-card {
+            /* background: #faf9f6;
+            border: 1px solid #e8d4c0;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.03); */
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        
+        .ceremony-card.fade-in-up {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .ceremony-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+        
+        .program-section {
+            background: #faf9f6;
+        }
+        
+        /* New Timeline Styles - Black Text Theme */
+        .program-section {
+            background: #faf9f6;
+            color: #000000;
+            padding: 5rem 0;
+        }
+        
+        .program-section h2 {
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+            color: #000000;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+        
+        .timeline-new {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .timeline-new::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #000000;
+            transform: translateX(-50%) scaleY(0);
+            z-index: 1;
+            opacity: 1;
+            transform-origin: top;
+        }
+        
+        .timeline-new.animate::before {
+            animation: drawLine 1.5s ease-out 0.2s forwards;
+        }
+        
+        /* 为每个时间轴项目添加中轴线上的圆点 */
+        .timeline-item-new::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 12px;
+            height: 12px;
+            background: #000000;
+            /* border: 3px solid #ffffff; */
+            border-radius: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            z-index: 3;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            opacity: 0;
+        }
+        
+        /* 中轴线绘制动画 */
+        @keyframes drawLine {
+            from {
+                transform: translateX(-50%) scaleY(0);
+            }
+            to {
+                transform: translateX(-50%) scaleY(1);
+            }
+        }
+        
+        /* 圆点出现动画 */
+        @keyframes appearDot {
+            from {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0);
+            }
+            to {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+        
+        /* 为每个圆点添加按顺序出现的动画 */
+        .timeline-item-new:nth-child(1)::before {
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-item-new:nth-child(2)::before {
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-item-new:nth-child(3)::before {
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-item-new:nth-child(4)::before {
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-item-new:nth-child(5)::before {
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-item-new:nth-child(6)::before {
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-item-new:nth-child(7)::before {
+            transition: all 0.3s ease;
+        }
+        
+        /* 当添加animate类时启动动画 */
+        .timeline-new.animate .timeline-item-new:nth-child(1)::before {
+            animation: appearDot 0.8s ease-out 0.2s forwards;
+        }
+        
+        .timeline-new.animate .timeline-item-new:nth-child(2)::before {
+            animation: appearDot 0.8s ease-out 0.4s forwards;
+        }
+        
+        .timeline-new.animate .timeline-item-new:nth-child(3)::before {
+            animation: appearDot 0.8s ease-out 0.6s forwards;
+        }
+        
+        .timeline-new.animate .timeline-item-new:nth-child(4)::before {
+            animation: appearDot 0.8s ease-out 0.8s forwards;
+        }
+        
+        .timeline-new.animate .timeline-item-new:nth-child(5)::before {
+            animation: appearDot 0.8s ease-out 1s forwards;
+        }
+        
+        .timeline-new.animate .timeline-item-new:nth-child(6)::before {
+            animation: appearDot 0.8s ease-out 1.2s forwards;
+        }
+        
+        .timeline-new.animate .timeline-item-new:nth-child(7)::before {
+            animation: appearDot 0.8s ease-out 1.4s forwards;
+        }
+        
+        .timeline-item-new {
+            position: relative;
+            margin-bottom: 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            padding: 0 2rem;
+        }
+        
+        /* 奇数项：图标在左，信息在右 */
+        .timeline-item-new:nth-child(odd) {
+            flex-direction: row;
+        }
+        
+        /* 偶数项：信息在左，图标在右 */
+        .timeline-item-new:nth-child(even) {
+            /* flex-direction: row-reverse; */
+        }
+        
+        /* Timeline delay - 强化 selector，确保所有屏幕都生效 */
+        .timeline-new > .timeline-item-new:nth-child(1) .timeline-info,
+        .timeline-new > .timeline-item-new:nth-child(1) .timeline-icon {
+            transition-delay: 0.2s !important;
+        }
+        .timeline-new > .timeline-item-new:nth-child(2) .timeline-info,
+        .timeline-new > .timeline-item-new:nth-child(2) .timeline-icon {
+            transition-delay: 0.4s !important;
+        }
+        .timeline-new > .timeline-item-new:nth-child(3) .timeline-info,
+        .timeline-new > .timeline-item-new:nth-child(3) .timeline-icon {
+            transition-delay: 0.6s !important;
+        }
+        .timeline-new > .timeline-item-new:nth-child(4) .timeline-info,
+        .timeline-new > .timeline-item-new:nth-child(4) .timeline-icon {
+            transition-delay: 0.8s !important;
+        }
+        .timeline-new > .timeline-item-new:nth-child(5) .timeline-info,
+        .timeline-new > .timeline-item-new:nth-child(5) .timeline-icon {
+            transition-delay: 1s !important;
+        }
+        .timeline-new > .timeline-item-new:nth-child(6) .timeline-info,
+        .timeline-new > .timeline-item-new:nth-child(6) .timeline-icon {
+            transition-delay: 1.2s !important;
+        }
+        .timeline-new > .timeline-item-new:nth-child(7) .timeline-info,
+        .timeline-new > .timeline-item-new:nth-child(7) .timeline-icon {
+            transition-delay: 1.4s !important;
+        }
+        
+        .timeline-icon {
+            width: 80px;
+            height: 80px;
+            /* background: #f8f6f2;
+            border: 1px solid #e8d4c0; */
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            /* box-shadow: 0 4px 15px rgba(0,0,0,0.05); */
+            opacity: 0;
+            transform: scale(0.0);
+            transition: all 0.8s ease-out;
+            position: relative;
+            z-index: 2;
+            width: 50% !important;
+        }
+        
+        .timeline-icon.animate {
+            opacity: 1;
+            transform: scale(0.35);
+        }
+        
+
+        
+        .timeline-icon i {
+            font-size: 2rem;
+            color: #8b7355;
+        }
+        
+        .timeline-info {
+            flex: 0 1 auto;
+            /* max-width: 40%; */
+            padding: 0 1rem;
+            text-align: center;
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 1.3s cubic-bezier(0.23, 1, 0.32, 1);
+            width: 50%;
+        }
+        
+        .timeline-info.animate {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        /* 偶数项的信息从左侧滑入 */
+        .timeline-item-new:nth-child(even) .timeline-info {
+            transform: translateX(-50px);
+        }
+        
+        .timeline-item-new:nth-child(even) .timeline-info.animate {
+            transform: translateX(0);
+        }
+        
+        /* 添加淡入动画 */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        /* 移除不需要的动画 */
+        
+        .timeline-time {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            color: #000000;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-info h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: #000000;
+            margin: 0 0 0.5rem 0;
+            font-weight: 400;
+        }
+        
+        .timeline-info p {
+            font-size: 0.9rem;
+            color: #6b6b6b;
+            margin: 0;
+        }
+        
+        /* Mobile responsive for new timeline */
+        @media (max-width: 768px) {
+            .timeline-new::before {
+                left: 50%;
+            }
+            
+            .timeline-item-new {
+                flex-direction: row;
+                margin-bottom: 3rem;
+            }
+            
+            .timeline-item-new.reverse {
+                flex-direction: row;
+            }
+            
+            .timeline-icon {
+                /* width: 60px;
+                height: 60px; */
+                margin-bottom: 1rem;
+                align-self: center;
+                padding: 1rem;
+            }
+            
+            .timeline-icon i {
+                font-size: 1.5rem;
+            }
+            .timeline-icon img {
+                /* height: 100%; */
+            }
+            
+            .timeline-info {
+                padding: 0 1rem;
+                text-align: center;
+            }
+            
+            .timeline-time {
+                font-size: 1rem;
+                text-align: center;
+            }
+            
+            .timeline-info h4 {
+                font-size: 1.2rem;
+            }
+            
+            .timeline-info p {
+                font-size: 0.85rem;
+            }
+            
+            /* 移动端圆点样式调整 */
+            .timeline-item-new::before {
+                width: 10px;
+                height: 10px;
+                border-width: 2px;
+            }
+        }
+        
+        .gifts-section {
+            background: #f8f6f2;
+        }
+        
+        .gift-card {
+            background: #faf9f6;
+            border: 1px solid #e8d4c0;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.03);
+        }
+        
+        .gift-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+        
+        .navbar {
+            background: rgba(250, 249, 246, 0.95);
+            border-bottom: 1px solid rgba(44, 44, 44, 0.08);
+        }
+        
+        .nav-logo {
+            color: #6b6b6b;
+        }
+        
+        .nav-menu a {
+            color: #6b6b6b;
+            font-weight: 300;
+        }
+        
+        .nav-menu a:hover {
+            color: #8b7355;
+        }
+        
+        /* Center content styles */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: auto;
+            text-align: center;
+        }
+        
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .couple-names {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .wedding-date {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .hero-message {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Three-part image layout */
+        .image-showcase {
+            width:100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 8rem 30vw;
+            overflow: unset;
+        }
+        
+        .image-container {
+            display: flex;
+            gap: 1%;
+            height: 600px;
+            align-items: flex-end;
+            overflow: unset;
+        }
+        
+        .image-section {
+            position: relative;
+            border-radius: 0 !important;
+            box-shadow: none !important;
+            transition: none !important;
+            transform: none !important;
+            overflow: unset;
+        }
+        
+        .image-section-1 {
+            flex: 1;
+            position: relative;
+  
+            height: 100%;
+            background-image: url('images/img_1.jpg');
+            background-size: 690% 100%;
+            background-position: 17% 35%;
+            background-repeat: no-repeat;
+        }
+        
+        .image-section-2 {
+            flex: 3;
+            height: 100%;
+            background-image: url('images/img_1.jpg');
+            background-size: 250% 100%;
+            background-position: 50% 35%;
+            background-repeat: no-repeat;
+        }
+        
+        .image-section-3 {
+            flex: 1;
+            position: relative;
+        
+            height: 100%;
+            background-image: url('images/img_1.jpg');
+            background-size: 690% 100%;
+            background-position: 84% 35%;
+            background-repeat: no-repeat;
+        }
+        
+
+        
+        /* Remove overlay text */
+        .image-overlay {
+            display: none;
+        }
+        
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .image-showcase {
+                padding: 6rem 0rem;
+                width: 100%;
+                overflow: unset;
+            }
+            
+            .image-container {
+                flex-direction: row;
+                height: 600px;
+                gap: 0.5rem;
+                justify-content: center;
+                width: 100%;
+                overflow: unset;
+            }
+            
+            .image-section-1 {
+                width: 25%;
+                height: 100%;
+                flex-shrink: 0;
+            }
+            
+            .image-section-2 {
+                width: 50%;
+                height: 100%;
+                flex-shrink: 0;
+            }
+            
+            .image-section-3 {
+                width: 25%;
+                height: 100%;
+                flex-shrink: 0;
+            }
+        }
+        
+        /* Hero Image Section Styles */
+        .hero-image-section {
+            width: 100%;
+            height: 600px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            background-image: url('images/img_1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* height: 100%; */
+    background-color: rgba(0, 0, 0, 0.7);
+    background-image: url(images/mask.png);
+    background-repeat: no-repeat;
+   
+    z-index: 1;
+    bottom: -5px;
+    background-position: bottom;
+    background-size: contain;
+        }
+        
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            z-index: 2;
+            opacity: 0;
+            animation: fadeInFromBottom 2s ease-out 0.5s forwards;
+            display: flex;
+            
+        }
+        
+        @keyframes fadeInFromBottom {
+            from {
+                opacity: 0;
+                transform: translate(-50%, -30%);
+            }
+            to {
+                opacity: 1;
+                transform: translate(-50%, -50%);
+            }
+        }
+        
+        .hero-text h1 {
+            font-family: 'StylishCalligraphy', serif;
+            font-family: 'Motterdam', serif;
+            font-size: 5rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+        
+        .hero-text p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+        
+        /* Styled Wedding Date */
+        .wedding-date-styled {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 400px;
+            margin: 2rem auto 0;
+            gap: 0;
+            margin-bottom: 2rem;
+        }
+        
+        .date-left, .date-center, .date-right {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            flex: 1;
+            width: 33.33%;
+        }
+        
+        .date-left span, .date-right span {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.9rem;
+            font-weight: 300;
+            color: rgba(0, 0, 0, 0.8);
+            letter-spacing: 1px;
+        }
+        
+        .line {
+            width: 2rem;
+            height: 1px;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+        
+        .date-center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .date-center .month {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem;
+            font-weight: 300;
+            color: rgba(0, 0, 0, 0.8);
+            letter-spacing: 1px;
+        }
+        
+        .date-center .day {
+            font-family: 'StylishCalligraphy', serif;
+            font-size: 3.5rem;
+            font-weight: 400;
+            color: rgb(0, 0, 0);
+            line-height: 1;
+        }
+        
+            /* Language Switcher Styles */
+    .language-switcher {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+        display: flex;
+        gap: 10px;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 10px;
+        border-radius: 25px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        backdrop-filter: blur(10px);
+    }
+
+    .lang-btn {
+        padding: 8px 16px;
+        border: none;
+        background: transparent;
+        color: #6b6b6b;
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 0.9rem;
+        cursor: pointer;
+        border-radius: 20px;
+        transition: all 0.3s ease;
+    }
+
+    .lang-btn.active {
+        background: #8b7355;
+        color: white;
+    }
+
+    .lang-btn:hover:not(.active) {
+        background: rgba(139, 115, 85, 0.1);
+        color: #8b7355;
+    }
+
+    /* Mobile responsive for hero image */
+    @media (max-width: 768px) {
+            .hero-text{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                padding: 0 1rem;
+                box-sizing: border-box;
+            }
+            .and{
+                font-size: 1.5rem;
+            }
+            .hero-text h1 {
+                font-size: 3rem;
+                text-align: center;
+                word-wrap: break-word;
+            }
+            
+            .hero-text p {
+                font-size: 1rem;
+                text-align: center;
+                word-wrap: break-word;
+            }
+            
+            .wedding-date-styled {
+                gap: 0;
+                margin-top: 1rem;
+                width: 100%;
+                max-width: 300px;
+                padding: 0 0.5rem;
+                box-sizing: border-box;
+            }
+            
+            .date-left span, .date-right span {
+                font-size: 0.7rem;
+            }
+            
+            .date-center .month {
+                font-size: 0.8rem;
+            }
+            
+            .date-center .day {
+                font-size: 2rem;
+            }
+            
+            .line {
+                width: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button class="lang-btn active" data-lang="en">English</button>
+        <button class="lang-btn" data-lang="zh">中文</button>
+    </div>
+
+    <!-- Hero Image Section -->
+    <!-- <section class="">
+       <img src="images/d2eec2_4b4b8de46cca44fba55748a4be8b5341~mv2 (1).avif" alt="hero-image" class="">
+    </section> -->
+    <section class="hero-image-section">
+        <div class="hero-image">
+            <div class="hero-overlay"></div>
+                            <div class="hero-text">
+                    <h1 data-en="Isabel" data-zh="Isabel">Isabel</h1>
+                    <span class="and">&</span>
+                    <h1 data-en="Kent" data-zh="Kent">Kent</h1>
+                   
+
+        </div>
+    </section>
+
+    <!-- Navigation Bar -->
+    <!-- <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">I & K</div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#countdown">Countdown</a></li>
+                <li><a href="#ceremony">Ceremony</a></li>
+                <li><a href="#program">Program</a></li>
+                <li><a href="#gifts">Gifts</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav> -->
+
+    <!-- Home Section -->
+    <section id="home" class="hero">
+      
+        
+        <!-- Image Showcase Area -->
+        <!-- <div class="image-showcase">
+            <div class="image-container">
+                <div class="image-section image-section-1"></div>
+                <div class="image-section image-section-2"></div>
+                <div class="image-section image-section-3"></div>
+            </div>
+        </div>   -->
+        <div class="hero-content">
+            <!-- <div class="couple-names">
+                <h1>Isabel</h1>
+                <span class="and">&</span>
+                <h1>Kent</h1>
+            </div> -->
+                             <div class="wedding-date-styled">
+                    <div class="date-left">
+                        <div class="line"></div>
+                        <span data-en="SUNDAY" data-zh="星期日">SUNDAY</span>
+                        <div class="line"></div>
+                    </div>
+                    <div class="date-center">
+                        <span class="month" data-en="MARCH" data-zh="三月">MARCH</span>
+                        <span class="day">22</span>
+                    </div>
+                    <div class="date-right">
+                        <div class="line"></div>
+                        <span>2026</span>
+                        <div class="line"></div>
+                    </div>
+                </div>
+                <!-- <div class="wedding-date">March 22, 2026</div> -->
+            <div class="hero-message">
+                
+                <p style="margin-bottom: 0" data-en="Our happiness is only complete when we share it with the people we love." data-zh="我們的幸福只有在與所愛的人分享時才完整。">Our happiness is only complete when we share it with the people we love.</p>
+                <p data-en="It would make us immensely happy if you would accompany us at the beginning of our life together." data-zh="如果您能在我們共同生活的開始陪伴我們，我們將無比幸福。">It would make us immensely happy if you would accompany us at the beginning of our life together.</p>
+            </div>
+            </div>
+        </div>
+    </section>
+        
+    <!-- Countdown Section -->
+    <section id="countdown" class="countdown-section">
+        <div class="container">
+           
+            <div class="countdown-container">
+                 <h2 data-en="D-" data-zh="D-">D-</h2>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="days">165</div>
+                    <div class="countdown-label" data-en="Days" data-zh="天">Days</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="hours">18</div>
+                    <div class="countdown-label" data-en="Hours" data-zh="小時">Hours</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="minutes">53</div>
+                    <div class="countdown-label" data-en="Minutes" data-zh="分鐘">Minutes</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="seconds">02</div>
+                    <div class="countdown-label" data-en="Seconds" data-zh="秒">Seconds</div>
+                </div>
+            </div>
+            <div class="blessing">
+                <p data-en="With the blessing of God, of Our Parents and Godparents" data-zh="">With the blessing of God, of Our Parents and Godparents</p>
+            </div>
+            <!-- <div class="parents-info">
+                <div class="parent-group">
+                    <h3>Bride's Parents</h3>
+                    <p>Porfirio Ramírez</p>
+                    <p>Miranda Enríquez</p>
+                </div>
+                <div class="parent-group">
+                    <h3>Groom's Parents</h3>
+                    <p>Javier Cuevas</p>
+                    <p>Guadalupe Guerrero</p>
+                </div>
+                <div class="parent-group">
+                    <h3>Wedding Godparents</h3>
+                    <p>Emmanuel Enríquez</p>
+                    <p>Luz Elena Flores</p>
+                </div>
+            </div> -->
+        </div>
+    </section>
+ <section class="ceremony-detail-section">
+        <div class="ceremony-bg-text">PICK-UP</div>
+        <div class="ceremony-container">
+            <div class="ceremony-image">
+                <img src="images/map_2.png" alt="Wedding Ceremony">
+            </div>
+            <div class="ceremony-details">
+                <h2 data-en="Tseung Kwan O Station Public Transport Interchange" data-zh="將軍澳站公共運輸交匯處">Tseung Kwan O Station Public Transport Interchange</h2>
+                <div class="detail-item">
+                    <div class="detail-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="detail-text">
+                        <!-- <strong>Location:</strong><br> -->
+                        <span data-en="BUS 628 line, Public Transport Interchange, 9 Tong Yin Street,Tseung Kwan O, New Territories" data-zh="巴士628線，公共運輸交匯處，9號同欣街，將軍澳，新界">BUS 628 line, Public Transport Interchange, 9 Tong Yin Street,Tseung Kwan O, New Territories</span>
+                    </div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="detail-text">
+                        <!-- <strong>Shuttle Pick-up:</strong><br> -->
+                         2:30 PM
+                    </div>
+                </div>
+                <!-- <div class="detail-item">
+                    <div class="detail-icon">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <div class="detail-text">
+                        <strong>Dress Code:</strong><br>
+                        Keep it classy
+                    </div>
+                </div> -->
+                <a href="https://maps.app.goo.gl/8uBKYhg2QKPVLoTV9" target="_blank" class="map-button">
+                    <span data-en="View on map" data-zh="查看地圖">View on map</span>
+                </a>
+            </div>
+        </div>
+    </section>
+ <section class="ceremony-detail-section-copy">
+        <!-- <div class="ceremony-bg-text-copy">PICK-UP</div> -->
+        <div class="ceremony-container-copy">
+            
+            <div class="ceremony-details-copy">
+                <h2 data-en="Hong Kong Adventist College" data-zh="香港三育書院">Hong Kong Adventist College</h2>
+                <div class="detail-item-copy">
+                    <div class="detail-icon-copy">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="detail-text-copy">
+                        <!-- <strong>Location:</strong><br> -->
+                        <span data-en="1111 Clear Water Bay Road,Sai Kung, New Territories,Hong Kong SAR" data-zh="清水灣清水灣道1111號
+                        ">1111 Clear Water Bay Road,Sai Kung, New Territories,Hong Kong SAR</span>
+                    </div>
+                </div>
+                <div class="detail-item-copy">
+                    <div class="detail-icon-copy">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="detail-text-copy">
+                        <!-- <strong>Shuttle Pick-up:</strong><br> -->
+                         3:30 PM
+                    </div>
+                </div>
+                <!-- <div class="detail-item-copy">
+                    <div class="detail-icon-copy">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <div class="detail-text-copy">
+                        <strong>Dress Code:</strong><br>
+                        Keep it classy
+                    </div>
+                </div> -->
+                <a href="https://maps.app.goo.gl/zy3VJQ4oV4eN3J2m9" target="_blank" class="map-button-copy">
+                    <span data-en="View on map" data-zh="查看地圖">View on map</span>
+                </a>
+            </div>
+            <div class="ceremony-image-copy">
+                <img src="images/school.png" alt="Wedding Ceremony">
+            </div>
+        </div>
+    </section>
+    <!-- Ceremony Information Section -->
+    <!-- <section id="ceremony" class="ceremony-section">
+        <div class="container">
+            <div class="ceremony-card">
+                <div class="ceremony-icon">
+                    <i class="fa-solid fa-van-shuttle"></i>
+                </div>
+              
+                <h3>Tseung Kwan O Station Public Transport Interchange</h3>
+                <p>BUS 628 line,Public Transport Interchange, 9 Tong Yin Street,Tseung Kwan O, New Territories,</p>
+                <div class="time">Shuttle Pick-up 2:30 PM</div>
+                <a href="https://maps.app.goo.gl/8uBKYhg2QKPVLoTV9" target="_blank" class="location-link">
+                  <button class="location-btn"><span data-en="View Location" data-zh="查看位置">View Location</span></button>
+                </a>
+            </div>
+            <div class="ceremony-card">
+                <div class="ceremony-icon">
+                    <i class="fas fa-glass-cheers"></i>
+                </div>
+               
+                <h3>Hong Kong Adventist College</h3>
+                <p>1111 Clear Water Bay Road,Sai Kung, New Territories,Hong Kong SAR</p>
+                <div class="time">Reception 3:30 PM</div>
+                <a href="https://maps.app.goo.gl/zy3VJQ4oV4eN3J2m9" target="_blank" class="location-link">
+                    <button class="location-btn"><span data-en="View Location" data-zh="查看位置">View Location</span></button>
+                  </a>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Wedding Program Section -->
+    <section id="program" class="program-section">
+        <div class="container">
+            <h2 data-en="Wedding Program" data-zh="婚禮流程">Wedding Program</h2>
+            <div class="timeline-new">
+                <div class="timeline-item-new">
+                    <div class="timeline-icon">
+                        <img src="images/WEDDING LOCATION.png" alt="">  
+                    </div>
+                    <div class="timeline-info">
+                        <div class="timeline-time">2:30 PM</div>
+                        <h4 data-en="Pick-up" data-zh="接送">Pick-up</h4>
+                        <!-- <p>PARROQUIA DEL CARMEN</p> -->
+                    </div>
+                </div>
+                <div class="timeline-item-new">
+                    <div class="timeline-info">
+                        <div class="timeline-time">3:30 PM</div>
+                        <h4 data-en="Ceremony" data-zh="儀式">Ceremony</h4>
+                        <!-- <p>Wedding Hall</p> -->
+                    </div>
+                    <div class="timeline-icon">
+                        <img src="images/RINGS.png" alt="">
+                    </div>
+                </div>
+                <div class="timeline-item-new">
+                    <div class="timeline-icon">
+                        <img src="images/DRINKING.png" alt="">
+                    </div>
+                    <div class="timeline-info">
+                        <div class="timeline-time">4:00 PM</div>
+                        <h4 data-en="Cocktail Party" data-zh="雞尾酒會">Cocktail Party</h4>
+                       
+                    </div>
+                </div>
+               <div class="timeline-item-new">
+                    <div class="timeline-info">
+                        <div class="timeline-time">4:00 PM</div>
+                        <h4 data-en="Photo Time" data-zh="拍照時間">Photo Time</h4>
+                     
+                    </div>
+                    <div class="timeline-icon">
+                        <img src="images/CAMERA.png" alt="">
+                    </div>
+                </div>
+                 <!-- <div class="timeline-item-new">
+                    <div class="timeline-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="timeline-info">
+                        <div class="timeline-time">9:30 PM</div>
+                        <h4>Couple's Waltz</h4>
+                      
+                    </div>
+                </div>
+                <div class="timeline-item-new">
+                    <div class="timeline-info">
+                        <div class="timeline-time">12:00 AM</div>
+                        <h4>Late Night Dinner</h4>
+                       
+                    </div>
+                    <div class="timeline-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                </div>
+                <div class="timeline-item-new">
+                    <div class="timeline-icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <div class="timeline-info">
+                        <div class="timeline-time">1:00 - 2:00 AM</div>
+                        <h4>Live Band</h4>
+                       
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Gift Suggestions Section -->
+    <!-- <section id="gifts" class="gifts-section">
+        <div class="container">
+            <h2>Gift Suggestions</h2>
+            <div class="gifts-container">
+                <div class="gift-card">
+                    <h3>Rain of Envelopes</h3>
+                    <div class="gift-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <p>Your blessings are the best gift</p>
+                </div>
+                                  <div class="gift-card">
+                      <h3>Bank Account</h3>
+                      <div class="gift-icon">
+                          <i class="fas fa-university"></i>
+                      </div>
+                      <div class="bank-info">
+                          <h4>BBVA</h4>
+                          <p>Account Number: 12345678910</p>
+                          <p>Account Holder: [Name]</p>
+                      </div>
+                  </div>
+                                  <div class="gift-card">
+                      <h3>Bank Account</h3>
+                      <div class="gift-icon">
+                          <i class="fas fa-university"></i>
+                      </div>
+                      <div class="bank-info">
+                          <h4>BANCOPPEL</h4>
+                          <p>Account Number: 98765432100</p>
+                          <p>Account Holder: [Name]</p>
+                      </div>
+                  </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- New Ceremony Section with Image and Details -->
+   
+
+    <!-- Elegant Arch Invitation Section -->
+    <section class="arch-invitation-section">
+      <div class="arch-invitation">
+        <svg class="arch-svg" viewBox="0 0 400 600">
+          <defs>
+            <path id="archPath" d="
+              M 16 590
+              Q 16 32 200 16
+              Q 384 32 384 590
+            " fill="none"/>
+          </defs>
+          <!-- <text fill="#f5f3e7" font-size="15" font-family="Cormorant Garamond, serif" letter-spacing="2">
+            <textPath href="#archPath" startOffset="0%">
+              With joyful hearts, together with their families, Isabel and Kent invite you to join their wedding celebration
+            </textPath>
+          </text> -->
+        </svg>
+        <div class="arch-content">
+          <h1 class="names">Isabel<br><span>&</span><br>Kent</h1>
+          <div class="invitation-text">
+            <p>INVITE YOU TO THE CEREMONY AND CELEBRATION OF THEIR MARRIAGE</p>
+            <p>MARCH 22, 2026 SUNDAY<br>AT 3:30 IN THE AFTERNOON</p>
+            <p>HONG KONG ADVENTIST COLLEGE<br>SAI KUNG, NEW TERRITORIES</p>
+            <p>Reception to follow</p>
+          </div>
+        </div>
+        <div class="arch-floral-bg"></div>
+      </div>
+    </section>
+    <style>
+    .arch-invitation-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 80vh;
+      background: #f8f6f2;
+      margin-bottom: 2rem;
+    }
+    .arch-invitation {
+      position: relative;
+      width: 400px;
+      height: 600px;
+      background: linear-gradient(135deg, #8b7355 0%, #6b5b47 100%);
+      border-radius: 200px 200px 0 0 / 180px 180px 0 0;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+      margin: 0 auto;
+      border: 2px solid #e8d4c0;
+    }
+    .arch-svg {
+      position: absolute;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 2;
+    }
+    .arch-content {
+      position: relative;
+      z-index: 3;
+      padding: 120px 48px 40px 48px;
+      text-align: center;
+      color: #fff;
+    }
+    .names {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 500;
+      margin-bottom: 1.2rem;
+      line-height: 1.1;
+    }
+    .names span {
+      font-size: 1.1rem;
+      font-family: serif;
+      font-weight: 300;
+      display: block;
+      margin: 0.2em 0;
+    }
+    .invitation-text p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.98rem;
+      margin: 0.5rem 0;
+      color: #fff;
+      letter-spacing: 0.5px;
+    }
+    .arch-floral-bg {
+      position: absolute;
+      left: 0; top: 0; width: 100%; height: 100%;
+      background: url('images/wedding-background.jpg') center/cover no-repeat;
+      opacity: 0.25;
+      z-index: 1;
+      filter: brightness(0.9) contrast(1.1);
+    }
+    @media (max-width: 600px) {
+      .arch-invitation {
+        width: 96%;
+        height: 130vw;
+        min-height: 340px;
+        border-radius: 80vw 80vw 0 0 / 80vw 80vw 0 0;
+        padding: 0;
+      }
+      .arch-content {
+        padding: 60px 8vw 20px 8vw;
+      }
+      .names {
+        font-size: 1.3rem;
+      }
+      .invitation-text p {
+        font-size: 0.82rem;
+      }
+      .arch-svg {
+        width: 100%;
+        height: 100%;
+      }
+      .ceremony-details h2{
+        font-size: 1.2rem;
+
+      }
+      .ceremony-image img{
+        width: 120%;
+      }
+    }
+
+    /* New Ceremony Detail Section Styles */
+    .ceremony-detail-section {
+      position: relative;
+      padding: 8rem 0;
+      background: #f6f4f1;
+      overflow: hidden;
+    }
+
+    .ceremony-bg-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      font-size: 8rem;
+      font-weight: 300;
+      color: rgba(139, 115, 85, 0.1);
+      font-family: 'Cormorant Garamond', serif;
+      letter-spacing: 2px;
+      z-index: 1;
+      pointer-events: none;
+      transition: transform 0.3s ease-out;
+      white-space: nowrap;
+    }
+
+    .ceremony-container {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+      padding: 0 2rem;
+    }
+
+    .ceremony-image {
+      flex: 1;
+      max-width: 570px;
+    }
+
+    .ceremony-image img {
+      width: 110%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 8px;
+      /* box-shadow: 0 8px 32px rgba(0,0,0,0.15); */
+    }
+
+    .ceremony-details {
+      flex: 1;
+      max-width: 500px;
+    }
+
+    .ceremony-details h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      color: #2c2c2c;
+      margin-bottom: 2rem;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+    }
+
+    .detail-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .detail-icon {
+      width: 40px;
+      height: 40px;
+      /* background: #8b7355; */
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .detail-icon i {
+      color: #8b7355;
+      font-size: 1.2rem;
+    }
+
+    .detail-text {
+      flex: 1;
+      color: #2c2c2c;
+      line-height: 1.6;
+    }
+
+    .detail-text strong {
+      color: #8b7355;
+      font-weight: 500;
+    }
+
+    .map-button {
+      display: inline-block;
+      padding: 12px 24px;
+      background: white;
+      color: #2c2c2c;
+      text-decoration: none;
+      border: 2px solid #2c2c2c;
+      border-radius: 4px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+      margin-top: 1rem;
+    }
+
+    .map-button:hover {
+      background: #2c2c2c;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    /* Mobile responsive for ceremony section */
+    @media (max-width: 768px) {
+      .ceremony-container {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 0 1rem;
+        text-align: start;
+      }
+
+      .ceremony-bg-text {
+        font-size: 4rem;
+      }
+
+      .ceremony-image img {
+        height: 300px;
+      }
+
+      .ceremony-details h2 {
+        font-size: 1.6rem;
+        /* text-align: center; */
+      }
+
+      .detail-item {
+        gap: 0;
+      }
+
+      .detail-icon {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    /* New Ceremony Detail Section Styles - Copy with new class names */
+    .ceremony-detail-section-copy {
+      position: relative;
+      padding: 8rem 0;
+      background: #f6f4f1;
+      overflow: hidden;
+    }
+
+    .ceremony-bg-text-copy {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      font-size: 8rem;
+      font-weight: 300;
+      color: rgba(139, 115, 85, 0.1);
+      font-family: 'Cormorant Garamond', serif;
+      letter-spacing: 2px;
+      z-index: 1;
+      pointer-events: none;
+      transition: transform 0.3s ease-out;
+      white-space: nowrap;
+    }
+
+    .ceremony-container-copy {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+      padding: 0 2rem;
+    }
+
+    .ceremony-image-copy {
+      flex: 1;
+      max-width: 570px;
+    }
+
+    .ceremony-image-copy img {
+      width: 110%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 8px;
+      /* box-shadow: 0 8px 32px rgba(0,0,0,0.15); */
+    }
+
+    .ceremony-details-copy {
+      flex: 1;
+      max-width: 500px;
+    }
+
+    .ceremony-details-copy h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      color: #2c2c2c;
+      margin-bottom: 2rem;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+    }
+
+    .detail-item-copy {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .detail-icon-copy {
+      width: 40px;
+      height: 40px;
+      /* background: #8b7355; */
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .detail-icon-copy i {
+      color: #8b7355;
+      font-size: 1.2rem;
+    }
+
+    .detail-text-copy {
+      flex: 1;
+      color: #2c2c2c;
+      line-height: 1.6;
+    }
+
+    .detail-text-copy strong {
+      color: #8b7355;
+      font-weight: 500;
+    }
+
+    .map-button-copy {
+      display: inline-block;
+      padding: 12px 24px;
+      background: white;
+      color: #2c2c2c;
+      text-decoration: none;
+      border: 2px solid #2c2c2c;
+      border-radius: 4px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+      margin-top: 1rem;
+    }
+
+    .map-button-copy:hover {
+      background: #2c2c2c;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    /* Mobile responsive for ceremony section copy */
+    @media (max-width: 768px) {
+      .ceremony-container-copy {
+        flex-direction: column-reverse;
+        gap: 2rem;
+        padding: 0 1rem;
+        text-align: start;
+      }
+
+      .ceremony-bg-text-copy {
+        font-size: 4rem;
+      }
+
+      .ceremony-image-copy img {
+        height: 300px;
+      }
+
+      .ceremony-details-copy h2 {
+        font-size: 1.6rem;
+        /* text-align: center; */
+      }
+
+      .detail-item-copy {
+        gap: 0;
+      }
+
+      .detail-icon-copy {
+        margin-bottom: 0.5rem;
+      }
+    }
+    </style>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Isabel & Kent Wedding Invitation</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    
+    <!-- 时间轴动画脚本 -->
+    <script>
+        $(document).ready(function() {
+            // 时间轴动画函数
+            function animateTimeline() {
+                const timelineItems = document.querySelectorAll('.timeline-item-new');
+                const timelineContainer = document.querySelector('.timeline-new');
+                
+                if (!timelineContainer) return;
+                
+                // 检查时间轴容器是否在视口中
+                const rect = timelineContainer.getBoundingClientRect();
+                const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+                
+                if (isVisible && !timelineContainer.classList.contains('animate')) {
+                    console.log('Timeline animation triggered!');
+                    // 添加animate类到时间轴容器，触发中轴线和圆点动画
+                    timelineContainer.classList.add('animate');
+                    
+                    // 为时间轴项目添加动画类
+                    timelineItems.forEach((item, index) => {
+                        const icon = item.querySelector('.timeline-icon');
+                        const info = item.querySelector('.timeline-info');
+                        
+                        setTimeout(() => {
+                            icon.classList.add('animate');
+                        }, index * 200);
+                        
+                        setTimeout(() => {
+                            info.classList.add('animate');
+                        }, index * 200 + 300);
+                    });
+                }
+            }
+            
+            // 其他元素的淡入动画
+            function animateOtherElements() {
+                const elements = document.querySelectorAll('.countdown-item, .ceremony-card, .parent-group');
+                
+                elements.forEach((element, index) => {
+                    const rect = element.getBoundingClientRect();
+                    const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+                    
+                    if (isVisible && !element.classList.contains('fade-in-up')) {
+                        setTimeout(() => {
+                            element.classList.add('fade-in-up');
+                        }, index * 100);
+                    }
+                });
+            }
+            
+            // 页面加载完成后执行一次
+            setTimeout(() => {
+                animateTimeline();
+                animateOtherElements();
+            }, 500);
+            
+            // 滚动时检查并执行动画
+            $(window).scroll(function() {
+                animateTimeline();
+                animateOtherElements();
+            });
+            
+            // 倒计时功能
+            function updateCountdown() {
+                const weddingDate = new Date('2026-03-22T15:30:00');
+                const now = new Date();
+                const diff = weddingDate - now;
+                
+                if (diff > 0) {
+                    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+                    
+                    $('#days').text(days);
+                    $('#hours').text(hours);
+                    $('#minutes').text(minutes);
+                    $('#seconds').text(seconds < 10 ? '0' + seconds : seconds);
+                }
+            }
+            
+            // 每秒更新倒计时
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+            
+            // 背景文字视差滚动效果
+            function animateBackgroundText() {
+                const bgText = document.querySelector('.ceremony-bg-text');
+                if (bgText) {
+                    const section = document.querySelector('.ceremony-detail-section');
+                    const sectionTop = section.offsetTop;
+                    const currentScroll = window.pageYOffset;
+                    
+                    // 当滚动到section位置时开始移动文字
+                    if (currentScroll >= sectionTop - window.innerHeight) {
+                        // 计算从section开始位置滚动的距离
+                        const scrollFromSection = currentScroll - (sectionTop - window.innerHeight);
+                        
+                        // 限制移动范围：从0到200px
+                        const maxMove = 250;
+                        const moveDistance = Math.min(scrollFromSection * 0.5, maxMove); // 每滚动1px，文字移动0.5px
+                        
+                        bgText.style.transform = `translateX(-50%) translateY(calc(-50% - ${moveDistance}px))`;
+                    } else {
+                        // 还没到section位置时，文字回到原位
+                        bgText.style.transform = `translateX(-50%) translateY(-50%)`;
+                    }
+                }
+            }
+            
+            // 滚动时执行动画
+            $(window).scroll(function() {
+                animateBackgroundText();
+            });
+            
+            // 语言切换功能
+            function switchLanguage(lang) {
+                const elements = document.querySelectorAll('[data-en][data-zh]');
+                elements.forEach(element => {
+                    if (lang === 'zh') {
+                        element.textContent = element.getAttribute('data-zh');
+                    } else {
+                        element.textContent = element.getAttribute('data-en');
+                    }
+                });
+                
+                // 更新按钮状态
+                document.querySelectorAll('.lang-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                document.querySelector(`[data-lang="${lang}"]`).classList.add('active');
+            }
+            
+            // 语言切换按钮事件
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const lang = this.getAttribute('data-lang');
+                    switchLanguage(lang);
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

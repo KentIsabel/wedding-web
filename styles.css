@@ -1,0 +1,730 @@
+/* Global Styles */
+@font-face {
+    font-family: 'StylishCalligraphy';
+    src: url('images/StylishCalligraphyDemo-XPZZ.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Motterdam';
+    src: url('images/Motterdam-K74zp.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Angelina';
+    src: url('images/AngelinaPersonalUseOnlyReg-1jzGj.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+    line-height: 1.6;
+    color: #2c2c2c;
+    overflow-x: hidden;
+    background-color: #f8f6f2;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation Bar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(248, 246, 242, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 1rem 0;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(44, 44, 44, 0.1);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #8b7355;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #2c2c2c;
+    font-weight: 400;
+    transition: color 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.nav-menu a:hover {
+    color: #8b7355;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #333;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* Home Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: #f8f6f2;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23e8e4de" opacity="0.3"/><circle cx="75" cy="75" r="1" fill="%23e8e4de" opacity="0.3"/><circle cx="50" cy="10" r="0.5" fill="%23e8e4de" opacity="0.3"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    pointer-events: none;
+}
+
+.hero-content {
+    flex: 1;
+    text-align: center;
+    z-index: 2;
+    position: relative;
+}
+
+.couple-names {
+    margin-bottom: 2rem;
+}
+
+.couple-names h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    font-weight: 400;
+    color: #2c2c2c;
+    margin: 0.5rem 0;
+    letter-spacing: 1px;
+}
+
+.and {
+    font-family: 'Motterdam';
+    font-size: 1.8rem;
+    color: #ffffff;
+    font-weight: 300;
+    display: block;
+    margin: 1rem 0;
+    font-style: italic;
+}
+
+.wedding-date {
+    font-size: 1.3rem;
+    color: #6b6b6b;
+    margin-bottom: 2rem;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+.hero-message {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1rem;
+    color: #6b6b6b;
+    line-height: 1.8;
+    font-weight: 300;
+}
+
+.hero-message p {
+    margin-bottom: 1rem;
+}
+
+/* Image Showcase Area */
+.image-showcase {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    position: relative;
+    padding: 6rem;
+}
+
+.image-container {
+    display: flex;
+    gap: 1rem;
+    max-width: 900px;
+    width: 100%;
+    height: 400px;
+}
+
+.image-section {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.image-section-1 {
+    background: linear-gradient(135deg, #e8e4de 0%, #d4c8b8 100%);
+    /* Can be replaced with actual image: background-image: url('images/barbara-photo.jpg'); */
+}
+
+.image-section-2 {
+    background: linear-gradient(135deg, #f0e6d8 0%, #e8d4c0 100%);
+    /* Can be replaced with actual image: background-image: url('images/couple-photo.jpg'); */
+}
+
+.image-section-3 {
+    background: linear-gradient(135deg, #e8e4de 0%, #d4c8b8 100%);
+    /* Can be replaced with actual image: background-image: url('images/sergio-photo.jpg'); */
+}
+
+.image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(44, 44, 44, 0.8));
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.image-section:hover .image-overlay {
+    transform: translateY(0);
+}
+
+.image-overlay h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+.image-overlay p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin: 0;
+    font-weight: 300;
+}
+
+/* Responsive Image Showcase */
+@media (max-width: 768px) {
+    .image-container {
+        flex-direction: row;
+        height: 300px;
+        gap: 0.5rem;
+        max-width: 100%;
+        overflow-x: auto;
+        padding: 0 1rem;
+    }
+
+    .image-section {
+        /* min-width: 200px; */
+        height: 100%;
+        flex-shrink: 0;
+    }
+
+    .image-overlay {
+        transform: translateY(0);
+        background: linear-gradient(transparent, rgba(44, 44, 44, 0.8));
+        padding: 1rem;
+    }
+
+    .image-overlay h3 {
+        font-size: 1.2rem;
+    }
+
+    .image-overlay p {
+        font-size: 0.8rem;
+    }
+}
+
+/* Countdown Section */
+.countdown-section {
+    padding: 5rem 0;
+    background: #f8f6f2;
+}
+
+.countdown-section h2 {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    ;
+    font-size: 2.2rem;
+    /* margin-bottom: 3rem; */
+    color: #2c2c2c;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    align-items: center;
+}
+
+.countdown-item {
+    text-align: center;
+    /* background: linear-gradient(135deg, #8b7355, #a08a6b); */
+    padding: 2rem;
+    border-radius: 12px;
+    /* min-width: 120px; */
+    /* box-shadow: 0 8px 25px rgba(139, 115, 85, 0.2); */
+}
+
+.countdown-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.countdown-label {
+    font-size: 1rem;
+    color: white;
+    font-weight: 500;
+}
+
+.blessing {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-style: italic;
+    color: #6b6b6b;
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.parents-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.parent-group {
+    text-align: center;
+    padding: 2rem;
+    background: #f0e6d8;
+    border-radius: 12px;
+    border: 1px solid #e8d4c0;
+}
+
+.parent-group h3 {
+    font-family: 'Cormorant Garamond', serif;
+    color: #8b7355;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+.parent-group p {
+    color: #6b6b6b;
+    margin-bottom: 0.5rem;
+    font-weight: 300;
+}
+
+/* Ceremony Section */
+.ceremony-section {
+    padding: 5rem 0;
+    background: #f0e6d8;
+    color: #2c2c2c;
+}
+
+.ceremony-section .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+}
+
+.ceremony-card {
+    text-align: center;
+    padding: 3rem 2rem;
+    /* background: #f8f6f2; */
+    /* border-radius: 15px; */
+    /* border: 1px solid #e8d4c0; */
+    /* transition: transform 0.3s ease; */
+    /* box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05); */
+}
+
+.ceremony-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.ceremony-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #251f17;
+}
+
+.ceremony-card h3 {
+    font-family: 'Motterdam';
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+
+.ceremony-card h4 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #8b7355;
+    font-weight: 500;
+}
+
+.ceremony-card p {
+    margin-bottom: 1rem;
+    color: #6b6b6b;
+    font-weight: 300;
+}
+
+.time {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    color: #8b7355;
+    font-family: 'Cormorant Garamond';
+}
+
+.location-btn {
+    background: transparent;
+    border: 1px solid #8b7355;
+    color: #8b7355;
+    padding: 0.8rem 2rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 400;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    font-family: 'Cormorant Garamond';
+}
+
+.location-btn:hover {
+    background: #8b7355;
+    color: white;
+}
+
+/* Program Section */
+.program-section {
+    padding: 5rem 0;
+    background: #f8f6f2;
+}
+
+.program-section h2 {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
+    color: #2c2c2c;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #8b7355;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+}
+
+.timeline-item:nth-child(odd) {
+    flex-direction: row;
+}
+
+.timeline-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.timeline-time {
+    flex: 1;
+    text-align: center;
+    font-weight: 500;
+    color: #8b7355;
+    font-size: 1rem;
+}
+
+.timeline-content {
+    flex: 2;
+    background: #f0e6d8;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin: 0 2rem;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    position: relative;
+    border: 1px solid #e8d4c0;
+}
+
+.timeline-content::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+.timeline-item:nth-child(odd) .timeline-content::before {
+    left: -10px;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #f8f9fa transparent transparent;
+    transform: translateY(-50%);
+}
+
+.timeline-item:nth-child(even) .timeline-content::before {
+    right: -10px;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent #f8f9fa;
+    transform: translateY(-50%);
+}
+
+.timeline-icon {
+    font-size: 1.8rem;
+    color: #8b7355;
+    margin-bottom: 1rem;
+}
+
+.timeline-content h4 {
+    font-family: 'Cormorant Garamond', serif;
+    color: #2c2c2c;
+    margin: 0;
+    font-weight: 400;
+}
+
+/* Gifts Section */
+.gifts-section {
+    padding: 5rem 0;
+    background: #f0e6d8;
+    color: #2c2c2c;
+}
+
+.gifts-section h2 {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
+    color: #2c2c2c;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+.gifts-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.gift-card {
+    background: #f8f6f2;
+    padding: 2.5rem;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid #e8d4c0;
+    transition: transform 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.gift-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.gift-icon {
+    font-size: 2.5rem;
+    color: #8b7355;
+    margin-bottom: 1.5rem;
+}
+
+.gift-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: #8b7355;
+    font-weight: 400;
+}
+
+.gift-card p {
+    margin-bottom: 1rem;
+    color: #6b6b6b;
+    font-weight: 300;
+}
+
+.bank-info h4 {
+    color: #8b7355;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.bank-info p {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: #6b6b6b;
+    font-weight: 300;
+}
+
+/* Footer */
+.footer {
+    background: #2c2c2c;
+    color: #f8f6f2;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        /* padding: 2rem 0; */
+    }
+
+    .couple-names h1 {
+        font-size: 2.5rem;
+    }
+
+    .countdown-container {
+        /* flex-wrap: wrap; */
+        gap: 5px;
+    }
+
+    .countdown-item {
+        min-width: 70px;
+        padding: 0.5rem;
+    }
+
+    .countdown-number {
+        font-size: 2rem;
+    }
+
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-item {
+        flex-direction: column !important;
+        align-items: flex-start;
+        padding-left: 50px;
+    }
+
+    .timeline-time {
+        text-align: left;
+        margin-bottom: 1rem;
+    }
+
+    .timeline-content {
+        margin: 0;
+        width: 100%;
+    }
+
+    .timeline-content::before {
+        display: none;
+    }
+
+    .ceremony-section .container {
+        grid-template-columns: 1fr;
+    }
+
+    .parents-info {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Animation Effects */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f8f6f2;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #8b7355;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #6b5b3f;
+}

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isabel & Kent - Wedding Invitation (Image Version)</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Playfair+Display:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Center content styles */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+        
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .couple-names {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .wedding-date {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .hero-message {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Three-part image layout */
+        .image-showcase {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .image-container {
+            display: flex;
+            gap: 1rem;
+            height: 400px;
+        }
+        
+        .image-section {
+            overflow: hidden;
+            position: relative;
+            border-radius: 0 !important;
+            box-shadow: none !important;
+            transition: none !important;
+            transform: none !important;
+        }
+        
+        .image-section-1 {
+            flex: 1;
+            background: linear-gradient(135deg, #e8e4de 0%, #d4c8b8 100%);
+        }
+        
+        .image-section-2 {
+            flex: 2;
+            background: linear-gradient(135deg, #f0e6d8 0%, #e8d4c0 100%);
+        }
+        
+        .image-section-3 {
+            flex: 1;
+            background: linear-gradient(135deg, #e8e4de 0%, #d4c8b8 100%);
+        }
+        
+
+        
+        /* Remove overlay text */
+        .image-overlay {
+            display: none;
+        }
+        
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .image-showcase {
+                padding: 0 1rem;
+                width: 100%;
+                overflow: hidden;
+            }
+            
+            .image-container {
+                flex-direction: row;
+                height: 200px;
+                gap: 0.5rem;
+                justify-content: center;
+                width: 100%;
+                overflow: hidden;
+            }
+            
+            .image-section-1 {
+                width: 25%;
+                height: 100%;
+                flex-shrink: 0;
+            }
+            
+            .image-section-2 {
+                width: 50%;
+                height: 100%;
+                flex-shrink: 0;
+            }
+            
+            .image-section-3 {
+                width: 25%;
+                height: 100%;
+                flex-shrink: 0;
+            }
+        }
+    </style>
+    <style>
+        /* Image version styles */
+        .image-section-1 {
+            background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?w=300&h=400&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .image-section-2 {
+            background-image: url('https://images.unsplash.com/photo-1511285568869-2b00b6d3a3c3?w=300&h=400&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .image-section-3 {
+            background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=400&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">B & S</div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#countdown">Countdown</a></li>
+                <li><a href="#ceremony">Ceremony</a></li>
+                <li><a href="#program">Program</a></li>
+                <li><a href="#gifts">Gifts</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+            <!-- Home Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="couple-names">
+                <h1>Isabel</h1>
+                <span class="and">&</span>
+                <h1>Kent</h1>
+            </div>
+            <div class="wedding-date">March 22, 2026</div>
+            <div class="hero-message">
+                <p>Our happiness is only complete when we share it with the people we love.</p>
+                <p>It would make us immensely happy if you would accompany us at the beginning of our life together.</p>
+            </div>
+        </div>
+        
+                    <!-- Image Showcase Area -->
+        <div class="image-showcase">
+            <div class="image-container">
+                <div class="image-section image-section-1"></div>
+                <div class="image-section image-section-2"></div>
+                <div class="image-section image-section-3"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countdown Section -->
+    <section id="countdown" class="countdown-section">
+        <div class="container">
+            <h2>Countdown</h2>
+            <div class="countdown-container">
+                <div class="countdown-item">
+                    <div class="countdown-number" id="days">165</div>
+                    <div class="countdown-label">Days</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="hours">18</div>
+                    <div class="countdown-label">Hours</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="minutes">53</div>
+                    <div class="countdown-label">Minutes</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="seconds">02</div>
+                    <div class="countdown-label">Seconds</div>
+                </div>
+            </div>
+            <div class="blessing">
+                <p>With the blessing of God, of Our Parents and Godparents</p>
+            </div>
+            <div class="parents-info">
+                <div class="parent-group">
+                    <h3>Bride's Parents</h3>
+                    <p>Porfirio Ramírez</p>
+                    <p>Miranda Enríquez</p>
+                </div>
+                <div class="parent-group">
+                    <h3>Groom's Parents</h3>
+                    <p>Javier Cuevas</p>
+                    <p>Guadalupe Guerrero</p>
+                </div>
+                <div class="parent-group">
+                    <h3>Wedding Godparents</h3>
+                    <p>Emmanuel Enríquez</p>
+                    <p>Luz Elena Flores</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Isabel & Kent Wedding Invitation</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
