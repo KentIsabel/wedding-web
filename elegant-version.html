@@ -1867,6 +1867,11 @@
                     switchLanguage(lang);
                 });
             });
+
+            // 根据 URL ?lang=zh 预设语言
+            const urlLang = new URLSearchParams(window.location.search).get('lang');
+            const initialLang = urlLang === 'zh' ? 'zh' : 'en';
+            switchLanguage(initialLang);
         });
     </script>
 </body>
