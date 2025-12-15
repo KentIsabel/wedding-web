@@ -681,7 +681,7 @@
         .hero-image {
             width: 100%;
             height: 100%;
-            background-image: url('images/img_1.jpg');
+            background-image: url('images/9B33BC8E-2CEB-4D62-B62C-2180CAC69C21.JPG');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -694,7 +694,7 @@
     left: 0;
     width: 100%;
     /* height: 100%; */
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(255, 255, 255, 0.6);
     background-image: url(images/mask.png);
     background-repeat: no-repeat;
    
@@ -705,27 +705,28 @@
         }
         
         .hero-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
+            position: relative;
+            /* top: 50%; */
+            left: -50%;
             transform: translate(-50%, -50%);
             text-align: center;
-            color: white;
+            color: rgb(0, 0, 0);
             z-index: 2;
             opacity: 0;
             animation: fadeInFromBottom 2s ease-out 0.5s forwards;
             display: flex;
-            
+            justify-content: center;
+    width: 100vw;
         }
         
         @keyframes fadeInFromBottom {
             from {
                 opacity: 0;
-                transform: translate(-50%, -30%);
+                transform: translate(50%, 30%);
             }
             to {
                 opacity: 1;
-                transform: translate(-50%, -50%);
+                transform: translate(50%, 50%);
             }
         }
         
@@ -907,10 +908,7 @@
     <section class="hero-image-section">
         <div class="hero-image">
             <div class="hero-overlay"></div>
-                            <div class="hero-text">
-                    <h1 data-en="Isabel" data-zh="Isabel">Isabel</h1>
-                    <span class="and">&</span>
-                    <h1 data-en="Kent" data-zh="Kent">Kent</h1>
+                           
                    
 
         </div>
@@ -938,7 +936,10 @@
     <!-- Home Section -->
     <section id="home" class="hero">
       
-        
+        <div class="hero-text">
+            <h1 data-en="Isabel" data-zh="Isabel">Isabel</h1>
+            <span class="and" style="color: rgb(0, 0, 0);">&</span>
+            <h1 data-en="Kent" data-zh="Kent">Kent</h1> </div>
         <!-- Image Showcase Area -->
         <!-- <div class="image-showcase">
             <div class="image-container">
@@ -1827,10 +1828,10 @@
                         const slideInDistance = Math.min(scrollFromSection * 0.3, 200); // 每滚动1px，文字滑入0.3px，最大200px
                         const translateX = Math.max(-200 + slideInDistance, -200); // 从-200px开始，逐渐滑入到0px
                         
-                        bgTextCopy.style.transform = `translateX(${translateX}px) translateY(calc(-50% - ${moveDistance}px))`;
+                        bgTextCopy.style.transform = `translateX(${translateX}px)`;
                     } else {
                         // 还没到section位置时，文字保持在右边，不执行动画
-                        bgTextCopy.style.transform = `translateX(-200px) translateY(-50%)`;
+                        bgTextCopy.style.transform = `translateX(-200px) translateY(0%)`;
                     }
                 }
             }
